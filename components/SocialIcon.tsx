@@ -5,10 +5,12 @@ interface Props {
 }
 
 export default function SocialIcon({ url }: Props) {
+  const bgColor = "rgb(34, 34, 34)";
+  const fgColor = "white";
   return (
     <Icon
-      bgColor="rgb(34,34,34)"
-      fgColor="white"
+      bgColor={bgColor}
+      fgColor={fgColor}
       url={url}
       target="_blank"
       style={{ height: 40, width: 40 }}
