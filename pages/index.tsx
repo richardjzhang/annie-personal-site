@@ -19,7 +19,6 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: Props) {
-  console.log({ props });
   return (
     <>
       <Head>
@@ -67,9 +66,10 @@ export default function Home(props: Props) {
         </div>
         <div className="mt-24 px-5">
           {props.caseStudies.map((caseStudy) => (
-            <div
+            <Link
               key={caseStudy.sys.id}
               className="shadow shadow-slate-300 rounded overflow-hidden w-fit flex flex-col items-center text-center"
+              href={`/${caseStudy.slug}`}
             >
               <Image
                 alt={caseStudy.title}
@@ -81,13 +81,13 @@ export default function Home(props: Props) {
                 <p className="mt text-2xl font-semibold">{caseStudy.title}</p>
                 <p className="mt-2">{caseStudy.summary}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="mt-20 flex flex-col sm:flex-row sm:h-96">
           <div className="h-96 py-20 px-2 bg-sharpie bg-center bg-no-repeat bg-cover w-full flex items-end justify-center sm:w-6/12 sm:h-full">
             <p className="text-white text-4xl text-center font-bold">
-              Let's create better user experiences together!
+              Let&apos;s create better user experiences together!
             </p>
           </div>
           <div className="w-full h-96 bg-slate-200 flex flex-col items-center justify-center sm:w-6/12 sm:h-full">

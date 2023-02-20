@@ -12,6 +12,7 @@ export async function getAllCaseStudies() {
                 id
               }
               title
+              slug
               summary
               thumbnail {
                 url
@@ -38,7 +39,15 @@ export async function getCaseStudyBySlug(slug) {
             }
             title
             summary
-            thumbnail {
+            role
+            duration
+            tools
+            overview
+            problem
+            solution
+            background
+            content
+            coverPhoto {
               url
             }
           }
